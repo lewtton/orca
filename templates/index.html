@@ -121,7 +121,7 @@
           </div>
           <div class="panel-body">
             <p id="root"></p>            
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Launch demo modal</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">显示股票信息</button>
   
   <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -132,7 +132,35 @@
           <h4 class="modal-title" id="myModalLabel">Modal title</h4>
         </div>
         <div class="modal-body">
-          ...
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>股票代码</th>
+                <th>名称</th>
+                <th>上市时间</th>
+                <th>城市</th>
+                <th>行业</th>
+                <th>网址</th>
+              </tr>
+            </thead>
+            <tbody>
+<!-- 行循环 -->
+{%for row in stock_list%}
+              <tr>
+<!-- 列循环 -->
+
+                <td>{{row.code}}</td>
+                <td>{{row.name}}</td>
+                <td>{{row.starttime}}</td>
+                <td>{{row.city}}</td>
+                <td>{{row.industry}}</td>  
+                <td>{{row.www}}</td>  
+      
+              </tr>
+
+          {%endfor%}
+            </tbody>
+          </table>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -160,7 +188,7 @@
 <!-- <script src="/static/local/smarthome.js"></script> -->
 <script src="/static/bootstrap/js/bootstrap.js"></script> 
 
-<script src="/static/local/sync.js"></script>
+<script src="/static/local/smarthome.js"></script>
 </body>
 
 </html>

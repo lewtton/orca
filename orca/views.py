@@ -1,6 +1,7 @@
 import socket as ss
 from django.shortcuts import render
 from django.http import JsonResponse
+from stocks.models import StockList
 
 
 MENULIST = [
@@ -12,11 +13,14 @@ def renderhome(request, menu_id):
     """
     HOP
     """
+    stock_list = StockList.objects.order_by('-starttime')[:50]
+    print(stock_list)
     mdiv = {
         'MENULIST':MENULIST,
         'menu_id':menu_id,
         'page_name':MENULIST[menu_id//10-1][menu_id%10-1],
         'context':'Blablabla...!!!',
+        'stock_list':stock_list
         }
     # mdiv['MENULIST']=genPageMenuHtmlCode(11)
     response = render(request, "index.html", mdiv)

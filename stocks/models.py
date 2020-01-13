@@ -8,7 +8,6 @@ class StockList(models.Model):
     fullname = models.CharField(max_length=100)
     intename = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
-    country = models.CharField(max_length=50)
     starttime = models.DateField()
     location = models.CharField(max_length=10)
     province = models.CharField(max_length=10)

@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from datetime import datetime
 import requests
-from .models import Question
+from .models import StockList
 
 
 def index(request):
