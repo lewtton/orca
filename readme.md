@@ -4,7 +4,7 @@
 * 后端动态服务器:Django+uWSGI
 * 数据库:PostgreSQL
 * 前端环境:React+Bootstrap+jQuery
-* 智能家居底层为Crestron中控系统, 使用socket与pythonB汇接
+* 智能家居底层为Crestron中控系统, 使用socket与python汇接
 * 无头浏览器使用Puppeteer
 * 图像识别使用Python pillow包
 * 视频处理使用Python ffmpeg包
