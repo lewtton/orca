@@ -20,7 +20,7 @@
 3. uWSGI将请求交由Django处理
 >依据`./uwsgi.ini`
 4. Django依据路由表分析,交由相应views.py模块
-根路易为`./orca/urls.py`
+>路由入口文件为`./orca/urls.py`
 5. Django下views.py模块执行后台程序
 >调取数据库,或者执行其他Python程序
 6. Django下views.py回应客户端(浏览器,App)
