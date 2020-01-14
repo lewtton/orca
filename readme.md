@@ -6,7 +6,7 @@
 * 无头浏览器使用Puppeteer
 
 ## 配置信息
-### nginx
+#### nginx
         upstream django {
                 server 127.0.0.1:8001;
         }
@@ -25,7 +25,7 @@
         }
 ### Django
 orca/settings.py
-### 前端文件
+#### 前端文件
 ├── static  
 │   ├── assets  
 │   ├── bootstrap  
@@ -34,7 +34,6 @@ orca/settings.py
 │   └── local  
 
 ## 目录结构
-.
 ├── api  
 ├── cache  
 ├── manage.py  
