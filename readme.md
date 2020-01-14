@@ -53,23 +53,24 @@ pip install django requests psycopg2 pandas openpyxl numpy beautifulsoup4
 
 ## 配置信息
 #### NGINX
-        upstream django {
-                server 127.0.0.1:8001;
-        }
+```
+upstream django {
+        server 127.0.0.1:8001;
+}
 
-        server {
-                listen  80      default_server;
-                server_name     10.10.10.85;
-                root    /mnt/d/debian/orca;
-                location / {
-                        include uwsgi_params;
-                        uwsgi_pass django;
-                }
-                location ^~ /static/ {
-                        root /mnt/d/debian/orca;
-                }
+server {
+        listen  80      default_server;
+        server_name     10.10.10.85;
+        root    /mnt/d/debian/orca;
+        location / {
+                include uwsgi_params;
+                uwsgi_pass django;
         }
-        
+        location ^~ /static/ {
+                root /mnt/d/debian/orca;
+        }
+}
+```        
 #### uWSGI 
 * 配置文件
 > ./uwsgi.ini
@@ -81,24 +82,27 @@ pip install django requests psycopg2 pandas openpyxl numpy beautifulsoup4
 >./orca/settings.py
 
 #### 前端文件
-        ├─assets
-        ├─bootstrap
-        │  ├─css
-        │  ├─fonts
-        │  └─js
-        ├─cache
-        ├─image
-        │  ├─icons
-        │  └─pics
-        └─local
-        └─src
-
+```
+├─assets
+├─bootstrap
+│  ├─css
+│  ├─fonts
+│  └─js
+├─cache
+├─image
+│  ├─icons
+│  └─pics
+└─local
+└─src
+```
 ## 目录结构
-        ├── api  
-        ├── cache  
-        ├── manage.py  
-        ├── orca  
-        ├── static  
-        ├── stocks  
-        ├── templates  
-        └── uwsgi.ini  
+```
+├── api
+├── cache
+├── manage.py
+├── orca
+├── static
+├── stocks
+├── templates
+└── uwsgi.ini
+```
