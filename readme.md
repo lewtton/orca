@@ -6,11 +6,16 @@
 * 无头浏览器使用Puppeteer
 ## 工作流程详述
 1. 客户端(浏览器,App)发起请求
+>可以为`ajax`,只请求部分数据
 2. NGINX接受请求, 将请求交由uWSGI处理
+>带/static/标识的静态请求`图片|js|css`直接返回结果
 3. uWSGI将请求交由Django处理
-4. Django依据./orca/urls.py路由表分析,交由相应views.py模块
-5. Django下views.py模块执行后台程序(调取数据库,或者执行其他Python程序)
+4. Django依据路由表分析,交由相应views.py模块
+根路易为`./orca/urls.py`
+5. Django下views.py模块执行后台程序
+>调取数据库,或者执行其他Python程序
 6. Django下views.py回应客户端(浏览器,App)
+>根据请求类型,返回`模板页面`, `json数据`, `字典类型数据`
 
 ## 软件安装以及环境依赖
 #### 首先安装
