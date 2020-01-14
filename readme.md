@@ -47,11 +47,13 @@ pip install django requests psycopg2 pandas openpyxl numpy beautifulsoup4
         }
         
 #### uWSGI 
-./uwsgi.ini
-启动命令
-/opt/pyenv/pyenv3/bin/uwsgi -i  /mnt/d/debian/orca/uwsgi.ini        
+* 配置文件
+> ./uwsgi.ini
+* 启动命令
+> /opt/pyenv/pyenv3/bin/uwsgi -i  /mnt/d/debian/orca/uwsgi.ini        
 #### Django
-./orca/settings.py
+以下文件包括时区, 数据库, 静态文件(图片,js,css...)路径, 模板文件(html文件)路径等相关配置
+>./orca/settings.py
 
 #### 前端文件
         ├── static  
