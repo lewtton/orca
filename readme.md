@@ -11,14 +11,13 @@ apt install python3 python3-pip virtualenv nginx uwsgi postgresql
 #### Python虚拟环境
 创建Python3虚拟环境
 * 创建并进入虚拟环境目录
-> mkdir /opt/pyenv/
-  cd /opt/pyenv
+>mkdir /opt/pyenv/ && cd !$
 * 执行创建虚拟环境命令
 >virtualenv  --no-site-packages --python=python3 pyenv3
 * 启动虚拟环境
-                source /opt/pyenv/pyenv3/bin/activate
+>source /opt/pyenv/pyenv3/bin/activate
 * 退出虚拟环境
-                deactivate
+>deactivate
 
 #### 进入虚拟环境后安装
 pip install django requests psycopg2 pandas openpyxl numpy beautifulsoup4
