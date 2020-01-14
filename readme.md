@@ -1,9 +1,9 @@
 # 项目概述
 * 服务器操作系统为Debian 9 GNU/Linux
-* 静态web服务器:NGINX
-* 后端动态服务器:Django+uWSGI
-* 数据库:PostgreSQL
-* 前端环境:React+Bootstrap+jQuery
+* 静态web服务器:       NGINX
+* 后端动态服务器:       Django+uWSGI
+* 数据库:              PostgreSQL
+* 前端环境:            React+Bootstrap+jQuery
 * 智能家居底层为Crestron中控系统, 使用socket与python汇接
 * 嵌入式系统使用STM32F103开发板+传感器采集环境信息(温湿度,PM2.5,水浸,烟感等)
 * 无头浏览器使用Puppeteer
