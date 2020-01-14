@@ -1,9 +1,16 @@
 # 项目概述
-* 根目录下整体为Django项目, 操作系统为Debian 9 GNU/Linux
-* 后端环境为Django(动态python服务器)+uWSGI(wsgi中间件)+nginx(静态web服务器)+postgresql(数据库)
-* 前端环境为React+bootstrap+jQuery
-* 智能家居底层为Crestron中控系统, 使用socket与python汇接
+* 服务器操作系统为Debian 9 GNU/Linux
+* 静态web服务器:NGINX
+* 后端动态服务器:Django+uWSGI
+* 数据库:PostgreSQL
+* 前端环境:React+Bootstrap+jQuery
+* 智能家居底层为Crestron中控系统, 使用socket与pythonB汇接
 * 无头浏览器使用Puppeteer
+* 图像识别使用Python pillow包
+* 视频处理使用Python ffmpeg包
+* 股票查询使用Python Baostock包
+* 图表生成使用Chart.js
+
 ## 工作流程详述
 1. 客户端(浏览器,App)发起请求
 >可以为`ajax`,只请求部分数据
