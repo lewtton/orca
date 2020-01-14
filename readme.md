@@ -81,12 +81,17 @@ pip install django requests psycopg2 pandas openpyxl numpy beautifulsoup4
 >./orca/settings.py
 
 #### 前端文件
-        ├── static  
-        │   ├── assets  
-        │   ├── bootstrap  
-        │   ├── cache  
-        │   ├── image  
-        │   └── local  
+        ├─assets
+        ├─bootstrap
+        │  ├─css
+        │  ├─fonts
+        │  └─js
+        ├─cache
+        ├─image
+        │  ├─icons
+        │  └─pics
+        └─local
+        └─src
 
 ## 目录结构
         ├── api  
