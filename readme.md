@@ -8,8 +8,9 @@
 1. 客户端(浏览器,App)发起请求
 >可以为`ajax`,只请求部分数据
 2. NGINX接受请求, 将请求交由uWSGI处理
->带/static/标识的静态请求`图片|js|css`直接返回结果
+>url带/static/标识的静态请求如`图片|js|css`直接返回结果
 3. uWSGI将请求交由Django处理
+>依据`./uwsgi.ini`
 4. Django依据路由表分析,交由相应views.py模块
 根路易为`./orca/urls.py`
 5. Django下views.py模块执行后台程序
