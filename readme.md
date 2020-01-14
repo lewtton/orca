@@ -4,6 +4,14 @@
 * 前端环境为React+bootstrap+jQuery
 * 智能家居底层为Crestron中控系统, 使用socket与python汇接
 * 无头浏览器使用Puppeteer
+## 工作流程详述
+1. 客户端(浏览器,App)发起请求
+2. NGINX接受请求, 将请求交由uWSGI处理
+3. uWSGI将请求交由Django处理
+4. Django依据./orca/urls.py路由表分析,交由相应views.py模块
+5. Django下views.py模块执行后台程序(调取数据库,或者执行其他Python程序)
+6. Django下views.py回应客户端(浏览器,App)
+
 ## 软件安装以及环境依赖
 #### 首先安装
 apt install python3 python3-pip virtualenv nginx uwsgi postgresql
@@ -20,6 +28,7 @@ apt install python3 python3-pip virtualenv nginx uwsgi postgresql
 
 #### 进入虚拟环境后安装
 pip install django requests psycopg2 pandas openpyxl numpy beautifulsoup4
+
 #### 数据库初始化
 * 根据Model.py将model层转为迁移文件migration
 >python manage.py makemigrations
@@ -27,6 +36,7 @@ pip install django requests psycopg2 pandas openpyxl numpy beautifulsoup4
 >python manage.py migrate
 * 查看迁移文件的执行状态
 >python manage.py showmigrations
+
 ## 配置信息
 #### NGINX
         upstream django {
@@ -51,8 +61,9 @@ pip install django requests psycopg2 pandas openpyxl numpy beautifulsoup4
 > ./uwsgi.ini
 * 启动命令
 > /opt/pyenv/pyenv3/bin/uwsgi -i  /mnt/d/debian/orca/uwsgi.ini        
+
 #### Django
-以下文件包括时区, 数据库, 静态文件(图片,js,css...)路径, 模板文件(html文件)路径等相关配置
+以下文件包括时区, 数据库, 静态文件(图片,js,css...)路径, 模板文件(html页面)路径等相关配置
 >./orca/settings.py
 
 #### 前端文件
