@@ -27,73 +27,19 @@
 orca/settings.py
 ### 前端文件
 ├── static
-
 │   ├── assets
-
 │   ├── bootstrap
-
 │   ├── cache
-
 │   ├── image
-
 │   └── local
 
 ## 目录结构
 .
-├── api
-│   ├── admin.py
-│   ├── apps.py
-│   ├── __init__.py
-│   ├── migrations
-│   ├── models.py
-│   ├── tests.py
-│   ├── urls.py
-│   └── views.py
-├── cache
-│   ├── bstock.py
-│   ├── builddb.py
-│   ├── cache1.html
-│   ├── cache.html
-│   ├── demo_os.py
-│   ├── demo_re.py
-│   ├── demo_socket.py
-│   ├── demo_u.py
-│   ├── image.py
-│   ├── magnet.py
-│   ├── ss.py
-│   ├── stocks.xlsx
-│   └── stock.xlsx
-├── manage.py
-├── orca
-│   ├── asgi.py
-│   ├── __init__.py
-│   ├── __pycache__
-│   ├── settings.py
-│   ├── urls.py
-│   ├── views.py
-│   └── wsgi.py
-├── static
-│   ├── admin
-│   ├── assets
-│   ├── bootstrap
-│   ├── cache
-│   ├── image
-│   └── local
-├── stocks
-│   ├── admin.py
-│   ├── apps.py
-│   ├── __init__.py
-│   ├── migrations
-│   ├── models.py
-│   ├── __pycache__
-│   ├── tests.py
-│   ├── urls.py
-│   └── views.py
-├── templates
-│   ├── api
-│   ├── cache
-│   ├── hardware
-│   ├── index.html
-│   ├── program
-│   └── stocks
-└── uwsgi.ini
+├── api 
+├── cache 
+├── manage.py 
+├── orca 
+├── static 
+├── stocks 
+├── templates 
+└── uwsgi.ini 
