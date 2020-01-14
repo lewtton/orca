@@ -26,20 +26,20 @@
 ### Django
 orca/settings.py
 ### 前端文件
-├── static
-│   ├── assets
-│   ├── bootstrap
-│   ├── cache
-│   ├── image
-│   └── local
+├── static  
+│   ├── assets  
+│   ├── bootstrap  
+│   ├── cache  
+│   ├── image  
+│   └── local  
 
 ## 目录结构
 .
-├── api 
-├── cache 
-├── manage.py 
-├── orca 
-├── static 
-├── stocks 
-├── templates 
-└── uwsgi.ini 
+├── api  
+├── cache  
+├── manage.py  
+├── orca  
+├── static  
+├── stocks  
+├── templates  
+└── uwsgi.ini  
