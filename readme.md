@@ -20,7 +20,13 @@ apt install python3 python3-pip virtualenv nginx uwsgi postgresql
 
 #### 进入虚拟环境后安装
 pip install django requests psycopg2 pandas openpyxl numpy beautifulsoup4
-
+#### 数据库初始化
+* 根据Model.py将model层转为迁移文件migration
+>python manage.py makemigrations
+* 执行迁移文件,更新数据库
+>python manage.py migrate
+* 查看迁移文件的执行状态
+>python manage.py showmigrations
 ## 配置信息
 #### NGINX
         upstream django {
