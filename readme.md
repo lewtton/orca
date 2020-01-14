@@ -16,7 +16,7 @@
 1. 客户端(浏览器,App)发起请求
 >可以为`ajax`,只请求部分数据
 2. NGINX接受请求, 将请求交由uWSGI处理
->静态请求如`图片|js|css`(URL带`/static/*`标识)直接返回结果
+>`图片|js|css`等静态请求(URL带`/static/*`标识)直接返回结果,不通过uWSGI
 3. uWSGI将请求交由Django处理
 >依据`./uwsgi.ini`
 4. Django依据路由表分析,交由相应views.py模块
