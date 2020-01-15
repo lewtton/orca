@@ -7,8 +7,9 @@
 * 智能家居底层为Crestron中控系统, 使用socket与python汇接
 * 嵌入式系统使用STM32F103开发板+传感器采集环境信息(温湿度,PM2.5,水浸,烟感等)
 * 无头浏览器使用Puppeteer
+* 视频编解码使用ffmpeg
+* 视频处理使用OpenCV
 * 图像识别使用Python pillow包
-* 视频处理使用Python ffmpeg包
 * 股票查询使用Python Baostock包
 * 图表生成使用Chart.js
 
