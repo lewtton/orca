@@ -1,4 +1,4 @@
-# 项目概述
+## 项目概述
 * 服务器操作系统为Debian 9 GNU/Linux
 * 静态web服务器:       NGINX
 * 后端动态服务器:       Django+uWSGI
