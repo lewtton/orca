@@ -38,7 +38,7 @@ $("#btn_stb").children().click(function () {
   console.log(btn);
   $.ajax({
     type: "post",
-    url: "/apish/",
+    url: "192.168.1.109/apipk/",
     dataType: "json",
     // contentType : "application/json",
     data: btn,

@@ -23,6 +23,8 @@ urlpatterns = [
     path('', views.home),
     path('<int:menu_id>/', views.menu),
     path('apish/', views.smarthomeapi),
+    path('poker/', views.poker),
+    path('apipk/', views.pokerapi),
     path('stocks/', include('stocks.urls')),
     path('admin/', admin.site.urls),
 ]
