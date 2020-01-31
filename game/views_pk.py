@@ -111,17 +111,15 @@ def apipk(request, userid):
             'cur': suitcard,
             'hold': pk_hold,
             }
- 
+    pk_msg = "初始化界面，同步用户名称\n 当前局人数：{0}。".format(pk_num)
 #  提供UI初始化组件， 获取用户ID
     if(request.POST.get("init")=="99"):
         pk_dict = {
             'players': pk_user,
             'userid': userid,
             'holdid': userid,
-            'msg':"初始化界面，同步用户名称",
+            'msg':pk_msg,
             }
-
-
 
 # 初始化4人牌局
     if(request.POST.get("init")=="4"):
@@ -149,7 +147,7 @@ def apipk(request, userid):
                 'players': pk_user,
                 'userid': userid,
                 'holdid': 0,
-                'msg': "开始4人游戏",
+                'msg':pk_msg
                 }
             cache.set('pk_card', pk_card, settings.REDIS_TIMEOUT)
             cache.set('pk_cur', pk_cur, settings.REDIS_TIMEOUT)
@@ -173,7 +171,7 @@ def apipk(request, userid):
                 'players': pk_user,
                 'userid': userid,
                 'holdid': 0,
-                'msg': "开始4人游戏",
+                'msg': pk_msg,
                 }
             cache.set('pk_card', pk_card, settings.REDIS_TIMEOUT)
             cache.set('pk_cur', pk_cur, settings.REDIS_TIMEOUT)
@@ -197,7 +195,7 @@ def apipk(request, userid):
                 'players': pk_user,
                 'userid': userid,
                 'holdid': 0,
-                'msg': "开始4人游戏",
+                'msg': pk_msg,
                 }
             cache.set('pk_card', pk_card, settings.REDIS_TIMEOUT)
             cache.set('pk_cur', pk_cur, settings.REDIS_TIMEOUT)
