@@ -77,18 +77,38 @@ WSGI_APPLICATION = 'orca.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'djdb',
+#         'USER': 'django',
+#         'PASSWORD': 'django1sM01',
+#         'HOST': 'localhost',
+#         'PORT': '5888',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djdb',
-        'USER': 'django',
-        'PASSWORD': 'django1sM01',
-        'HOST': 'localhost',
-        'PORT': '5888',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
 
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "IGNORE_EXCEPTIONS": True,           
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+REDIS_TIMEOUT=7*24*60*60
+CUBES_REDIS_TIMEOUT=60*60
+NEVER_REDIS_TIMEOUT=365*24*60*60
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

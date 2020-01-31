@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from . import views, views_pk
 
 urlpatterns = [
     # ex: /polls/
@@ -9,6 +9,7 @@ urlpatterns = [
     # ex: /polls/5/results/
     path('<int:question_id>/results/', views.results, name='results'),
     # ex: /polls/5/vote/
-    path('<int:question_id>/vote/', views.vote, name='vote'),
-    path('info/', views.info)
+    path('<int:userid>/', views.vote, name='vote'),
+    path('info/', views.info),
+    path('pk/<int:userid>/', views_pk.apipk, name='apipoker'),
 ]

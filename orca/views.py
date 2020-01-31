@@ -1,6 +1,4 @@
 import socket as ss
-import random
-
 from django.shortcuts import render
 from django.http import JsonResponse
 from stocks.models import StockList
@@ -11,24 +9,17 @@ MENULIST = [
     ['图像分析', '视频流处理', '无头浏览器', '分析报告'],
     ['股票查询', '定时爬虫计划', '图表'],
 ]
-def poker(request):
 
-    return render(request, "poker/index.html")
 
-def pokerapi(request):
+def game(request):
     """
     HOP
     """
-    
-    pk_user = ["郭靖", "黄蓉", "令狐冲", "任盈盈"]
-    pk_card = [[1,3,5,7,9,11,22,33,44,50],[2,4,6,8,22],[21,23,25],[31,35,37],[31,35,37]]
-    pk_cur  = 2
-    pk_dict = [pk_user,pk_card,pk_cur]
+    # stock_list = StockList.objects.order_by('-starttime')[:50]
+    # print(stock_list)
 
-
-    # print("字典：" + str(sta_dict))
-    return JsonResponse(pk_dict, safe=False)  
-
+    response = render(request, "game.html")
+    return response
 def renderhome(request, menu_id):
     """
     HOP
@@ -44,7 +35,7 @@ def renderhome(request, menu_id):
         }
     # mdiv['MENULIST']=genPageMenuHtmlCode(11)
     response = render(request, "index.html", mdiv)
-    print(type(response))
+    # print(type(response))
     return response
 
 
@@ -62,12 +53,17 @@ def menu(request, menu_id):
     response = renderhome(request, menu_id)
     return response
 
-def smarthomeapi(request):
+def apish(request):
     """
     HOP
     """
+    sta_list = []
+    sta_dict = {}
+    # print(request.POST)
+
     host = '10.10.10.44'
     port = 8090
+
     btn_str = str(request.POST.get("btn")).upper()
     print(btn_str)
     so_tcp = ss.socket(ss.AF_INET, ss.SOCK_STREAM)
@@ -78,11 +74,12 @@ def smarthomeapi(request):
     sta = so_tcp.recv(1024).decode('utf-8')
     so_tcp.close()
     # print("列表："+sta)
-    sta_list = []
-    sta_dict = {}
+
     sta_list = sta.split(",")
     for i,item in enumerate(sta_list):
         sta_dict[i+1] = item
     # print("字典：" + str(sta_dict))
+
+    
     return JsonResponse(sta_dict, safe=False)
     
