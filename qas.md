@@ -4,7 +4,7 @@
 #### 2、修改nginx.conf后重启服务，提示nginx负载过大，实际是与default冲突
 >简单的服务器建议直接删除或注销nginx.conf中include文件
 
-#### 3、Python(anaconda)安装uwsgi报如下错误:
+#### 3、使用Python(anaconda)pip安装uwsgi报如下错误:
 >lto1: fatal error: bytecode stream generated with LTO version 6.0 instead of the expected 4.1
 
 ##### 这是由于gcc版本不一致导致的，网上看到很多解决办法都是改变gcc版本，但改变gcc版本会影响到其他的程序。
