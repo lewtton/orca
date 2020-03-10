@@ -42,7 +42,7 @@ apt install python3 python3-pip virtualenv nginx uwsgi postgresql
 >deactivate
 
 #### 进入虚拟环境后安装
-pip install django requests psycopg2 pandas openpyxl numpy beautifulsoup4
+pip install django requests psycopg2 pandas openpyxl numpy beautifulsoup4 redis django-redis
 
 #### 数据库初始化
 * 根据Model.py将model层转为迁移文件migration
