@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="/static/assets/fav.png" type="image/x-icon" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="/static/assets/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/static/local/dashboard.css" rel="stylesheet">
+
+
+
+  <title>那个人曾经来过 然后默默离开 从此再也没有回来</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">翼如既往 初心不改</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <form class="navbar-form navbar-right" method="POST">
+          <div class="form-group">
+            <input type="text" placeholder="Email" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Password" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-success">Sign in</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">{% if MENULIST %}{% for menu in MENULIST %}
+        <ul class="nav nav-sidebar">{% for item in menu %}
+          <li><a href="/{{forloop.parentloop.counter}}{{forloop.counter}}">{{item}}</a></li>{% endfor %}
+        </ul>{% endfor %}{% else %}
+        <p>内部数据错误</p>{% endif %}
+      </div>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h3 class="page-header">页面名称:{{menu_id}}--{{page_name}}</h3>
+        <div class="well well-lg">
+          <p>
+            <h4>I still love you, but the persistence to stay with you has gone.</h4>
+          </p>
+          <p>
+            <h4>Sorry, I'm very sorry.</h4>
+          </p>
+          <p id="fback"></p>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">灯光控制</h3>
+          </div>
+          <div class="panel-body">
+
+            <p  id="btn_light">
+              <button type="submit" class="btn btn-lg btn-danger"  data-toggle="button" aria-pressed="false" autocomplete="off" value="LIT1">玄关</button>
+              <button type="submit" class="btn btn-lg btn-danger" value="LIT2">卫生间</button>
+              <button type="submit" class="btn btn-lg btn-danger" value="LIT3">电视柜</button>
+              <button type="submit" class="btn btn-lg btn-danger" value="LIT4">床头灯</button>
+              <button type="submit" class="btn btn-lg btn-danger" value="LIT5">台灯</button>
+
+            </p>
+
+          </div>
+        </div>
+
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">多媒体控制</h3>
+          </div>
+          <div class="panel-body">
+            <p>电视控制</p>
+            <p  id="btn_tv">
+              <button type="submit" class="btn btn-lg btn-warning glyphicon glyphicon-off" value="BTN21"></button>
+              <button type="submit" class="btn btn-lg btn-danger glyphicon glyphicon-volume-off " value="BTN32"></button>
+              <button type="submit" class="btn btn-lg btn-info glyphicon glyphicon-volume-down" value="BTN31"></button>
+              <button type="submit" class="btn btn-lg btn-info glyphicon glyphicon-volume-up" value="BTN30"></button>
+            </p>
+            <p>机顶盒控制</p>
+            <p  id="btn_stb">
+              <button type="submit" class="btn btn-lg btn-warning glyphicon glyphicon-off" value="BTN41"></button>
+              <button type="submit" class="btn btn-lg btn-danger glyphicon glyphicon-volume-off " value="BTN44"></button>
+              <button type="submit" class="btn btn-lg btn-info glyphicon glyphicon-volume-down" value="BTN43"></button>
+              <button type="submit" class="btn btn-lg btn-info glyphicon glyphicon-volume-up" value="BTN42"></button>
+              <button type="submit" class="btn btn-lg btn-primary glyphicon glyphicon-home" value="BTN51"></button>
+              <button type="submit" class="btn btn-lg btn-primary glyphicon glyphicon-menu-hamburger" value="BTN52"></button>
+              <button type="submit" class="btn btn-lg btn-primary glyphicon glyphicon-log-out" value="BTN50"></button>
+              <button type="submit" class="btn btn-lg btn-warning glyphicon glyphicon-menu-up" value="BTN45"></button>
+              <button type="submit" class="btn btn-lg btn-warning glyphicon glyphicon-menu-down" value="BTN46"></button>
+              <button type="submit" class="btn btn-lg btn-warning glyphicon glyphicon-menu-left" value="BTN47"></button>
+              <button type="submit" class="btn btn-lg btn-warning glyphicon glyphicon-menu-right" value="BTN48"></button>
+              <button type="submit" class="btn btn-lg btn-primary glyphicon glyphicon-ok-circle" value="BTN49"></button>
+            </p>
+          </div>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">ID = ROOT</h3>
+          </div>
+          <div class="panel-body">
+            <p id="root"></p>            
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">显示股票信息</button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div>
+        <div class="modal-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>股票代码</th>
+                <th>名称</th>
+                <th>上市时间</th>
+                <th>城市</th>
+                <th>行业</th>
+                <th>网址</th>
+              </tr>
+            </thead>
+            <tbody>
+<!-- 行循环 -->
+{%for row in stock_list%}
+              <tr>
+<!-- 列循环 -->
+
+                <td>{{row.code}}</td>
+                <td>{{row.name}}</td>
+                <td>{{row.starttime}}</td>
+                <td>{{row.city}}</td>
+                <td>{{row.industry}}</td>  
+                <td>{{row.www}}</td>  
+      
+              </tr>
+
+          {%endfor%}
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+      </div>
+    </div>
+  </div>
+<!-- React component.
+
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+-->
+
+<!-- jquery-3 comonent -->
+<script src="/static/bootstrap/js/jquery-3.4.1.min.js"></script>
+<!-- local javascript -->
+<!-- <script src="/static/local/smarthome.js"></script> -->
+<script src="/static/bootstrap/js/bootstrap.js"></script> 
+
+<script src="/static/local/smarthome.js"></script>
+</body>
+
+</html>

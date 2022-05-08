@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            List of stocks
+        </title>
+    </head>
+    <body>
+        <h1>提交股票代码</h1>
+            <form action="info/" method="POST">
+                {% csrf_token %}
+                名称<input type="text" name="sname" value="sz002654">
+                <input type="submit" value="提交">
+            </form>
+    </body>
+</html>
